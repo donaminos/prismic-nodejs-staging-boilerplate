@@ -1,0 +1,28 @@
+{
+  "name": "prismic-nodejs-staging-boilerplate",
+  "version": "1.0.0",
+  "description": "An example of how to set up staging and production environments with your Prismic.io CMS.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jadengore/prismic-nodejs-staging-boilerplate.git"
+  },
+  "author": "Edward Bramanti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jadengore/prismic-nodejs-staging-boilerplate/issues"
+  },
+  "homepage": "https://github.com/jadengore/prismic-nodejs-staging-boilerplate#readme",
+  "dependencies": {
+    "bluebird": "^3.3.1",
+    "dotenv": "^2.0.0",
+    "handlebars": "^4.0.5",
+    "hapi": "^13.0.0",
+    "lodash": "^4.4.0",
+    "prismic.io": "^2.0.1",
+    "vision": "^4.0.1"
+  }
+}

@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<h1>Example of Staging/Production Prismic Setup</h1>
+<h3>Current environment: {{environment}}</h3>
+<table class="table">
+    <thead>
+        <th>Quote</th>
+        <th>Quotee</th>
+    </thead>
+    <tbody>
+        {{#each quotes}}
+        <tr>
+          {{#each this}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
