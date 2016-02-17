@@ -6,14 +6,7 @@ const getEnvironment = (api) => {
     return api.master();
   }
 
-  const stagingReleaseRef =
-    api.ref(process.env.PRISMIC_IO_STAGING_RELEASE_NAME);
-
-  if (stagingReleaseRef) {
-    return stagingReleaseRef;
-  } else {
-    return api.master();
-  }
+  return api.ref(process.env.PRISMIC_IO_STAGING_RELEASE_NAME) || api.master();
 };
 
 exports.getAPI = () => Prismic.api(
