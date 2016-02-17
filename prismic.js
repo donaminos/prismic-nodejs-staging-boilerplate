@@ -2,15 +2,15 @@
 const Prismic = require('prismic.io');
 
 const getEnvironment = (api) => {
-  if (process.env.NODE_ENV === 'staging') {
-    const stagingReleaseRef =
-      api.ref(process.env.PRISMIC_IO_STAGING_RELEASE_NAME);
+  if (process.env.NODE_ENV !== 'staging') {
+    return api.master();
+  }
 
-    if (stagingReleaseRef) {
-      return stagingReleaseRef;
-    } else {
-      return api.master();
-    }
+  const stagingReleaseRef =
+    api.ref(process.env.PRISMIC_IO_STAGING_RELEASE_NAME);
+
+  if (stagingReleaseRef) {
+    return stagingReleaseRef;
   } else {
     return api.master();
   }
