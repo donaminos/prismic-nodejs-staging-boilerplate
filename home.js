@@ -19,12 +19,13 @@ const getQuotes = (api) => api
 
 const homeHandler = (request, reply) => {
   Prismic.getAPI().then((api) => {
-    const stagingReleaseRef =
-      api.ref(process.env.PRISMIC_IO_STAGING_RELEASE_NAME);
+    const isProductionEnvironment =
+      Prismic.getEnvironment(api) === api.master();
+
     getQuotes(api).then((quotes) => {
       reply.view('quotes', {
         quotes: quotes,
-        environment: stagingReleaseRef ? 'Staging' : 'Production'
+        environment: isProductionEnvironment ? 'Production' : 'Staging'
       });
     });
   });
